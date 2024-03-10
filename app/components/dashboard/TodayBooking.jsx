@@ -2,9 +2,7 @@ import {
   Text,
   Paper,
   Flex,
-  useMantineColorScheme,
   Grid,
-  Box,
   Space,
   Center,
   ActionIcon,
@@ -21,23 +19,21 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
+
+const booking = [
+  { id: 1, key: "Name", value: "Miracle" },
+  { id: 2, key: "Participants", value: "2" },
+  { id: 3, key: "Time", value: "09:00 am" },
+  { id: 4, key: "Location", value: "ESV" },
+];
+
 export default function TodayBooking({}) {
-  const theme = useMantineColorScheme();
-
-  const booking = [
-    { id: 1, key: "Name", value: "Miracle" },
-    { id: 2, key: "Participants", value: "2" },
-    { id: 3, key: "Time", value: "09:00 am" },
-    { id: 4, key: "Location", value: "ESV" },
-  ];
-
   return (
     <Paper shadow="sm" p="sm">
       <Flex align="center" justify="space-between" mb={12}>
         <Text size="xl" fw={700}>
           Today Booking
         </Text>
-
         <Flex justify="space-between" align="center">
           <ActionIcon size={42} variant="filled" disabled bg="transparent">
             <IconChevronLeft stroke={1.5} />
