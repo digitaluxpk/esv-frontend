@@ -1,9 +1,10 @@
 "use client";
 
-import { Button } from "@mantine/core";
+import { useMantineColorScheme, Button, Group } from "@mantine/core";
 import Link from "next/link";
 
 export default function HomePage() {
+  const { setColorScheme, clearColorScheme } = useMantineColorScheme();
 
   return (
     <>
@@ -13,6 +14,13 @@ export default function HomePage() {
       <Button component={Link} href="/guide">
         Navigate to Guide dashboard
       </Button>
+      <Group>
+      <Button onClick={() => setColorScheme('light')}>Light</Button>
+      <Button onClick={() => setColorScheme('dark')}>Dark</Button>
+      <Button onClick={() => setColorScheme('auto')}>Auto</Button>
+      <Button onClick={clearColorScheme}>Clear</Button>
+    </Group>
     </>
   );
 }
+
