@@ -17,7 +17,7 @@ export default function StatusCards({ booking }) {
         {booking.performance === "profit" ? (
           <Flex align="center" justify="space-between" mt={4} h={30}>
             <Flex bg={theme.colors.green[0]} justify="flex-start" align="center">
-              <IconArrowUp stroke={2} color="green" size={16} />
+              <IconArrowUp stroke={2} color={theme.colors.green[7]} size={16} />
               <Text size="xs" c="green" fw={800}>
                 {booking.performance_count}
               </Text>
