@@ -17,11 +17,16 @@ import {
   IconPhone,
   IconBolt,
   IconChevronRight,
-  IconChevronLeft,
+  IconChevronLeft,IconRefresh
 } from "@tabler/icons-react";
+import { useState } from 'react';
 import Link from "next/link";
 import React from "react";
 export default function TodayBooking({}) {
+  const [showFullWidthButton, setShowFullWidthButton] = useState(false);
+
+  const toggleVisibility = () => setShowFullWidthButton(!showFullWidthButton);
+
   const theme = useMantineColorScheme();
 
   const booking = [
@@ -32,8 +37,8 @@ export default function TodayBooking({}) {
   ];
 
   return (
-    <Paper shadow="sm" p="sm">
-      <Flex align="center" justify="space-between" mb={12}>
+    <Paper shadow="sm" p="sm"  mih="100%" >
+      <Flex align="center" justify="space-between" >
         <Text size="xl" fw={700}>
           Today Booking
         </Text>
@@ -74,7 +79,7 @@ export default function TodayBooking({}) {
           ))}
         </Grid>
         <Space h="lg" />
-        <Flex align="center" justify="space-between">
+        {/* <Flex align="center" justify="space-between">
           <Button
             size="sm"
             fw={500}
@@ -92,7 +97,35 @@ export default function TodayBooking({}) {
           >
             Start Activity
           </Button>
+        </Flex> */}
+
+        {showFullWidthButton ? (
+        // Show this button with the updated label when `showFullWidthButton` is true
+        <Button bg="black" leftSection={<IconRefresh size={16} />} fullWidth onClick={toggleVisibility}>Return Equipment</Button>
+      ) : (
+        // Show these buttons when `showFullWidthButton` is false
+        <Flex align="center" justify="space-between">
+          <Button
+            size="sm"
+            fw={500}
+            leftSection={<IconPhone size={18} />}
+            variant="default"
+            onClick={toggleVisibility} // Toggle visibility on click
+          >
+            Contact
+          </Button>
+
+          <Button
+            fw={500}
+            size="sm"
+            leftSection={<IconBolt size={18} />}
+            variant="default"
+            onClick={toggleVisibility} // Toggle visibility on click
+          >
+            Start Activity
+          </Button>
         </Flex>
+      )}
         <Space h="lg" />
 
         <Center>

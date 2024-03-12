@@ -10,7 +10,6 @@ import {
   Space,
 } from "@mantine/core";
 import { useState } from "react";
-import {redirect} from "next/navigation";
 import { gudieBookingStatus } from "@/app/utils/DashboardConstants";
 import StatusCards from "@/app/components/guideDashboardComponents/StatusCards";
 import ReportChart from "@/app/components/guideDashboardComponents/ReportChart";
@@ -21,22 +20,18 @@ import BookingTable from "@/app/components/guideDashboardComponents/BookingTable
 
 
 export default function Guide() {
+  const [value, setValue] = useState(null);
+  console.log("gudieBookingStatus ", gudieBookingStatus);
 
-    redirect("/guide/dashboard");
-//   const [value, setValue] = useState(null);
-//   console.log("gudieBookingStatus ", gudieBookingStatus);
-
-//   const durations = [
-//     { value: "1months", label: "1 Month" },
-//     { value: "3months", label: "3 Months" },
-//     { value: "6months", label: "6 Months" },
-//     { value: "1year", label: "1 Year" },
-//   ];
-
+  const durations = [
+    { value: "1months", label: "1 Month" },
+    { value: "3months", label: "3 Months" },
+    { value: "6months", label: "6 Months" },
+    { value: "1year", label: "1 Year" },
+  ];
   return (
     <div>
-        CHECKING
-      {/* <Grid gutter="lg">
+      <Grid gutter="lg">
         {gudieBookingStatus?.map((booking) => (
           <StatusCards key={booking.id} booking={booking} />
         ))}
@@ -45,7 +40,7 @@ export default function Guide() {
       <Grid>
         <Grid.Col span={8}>
           <Paper shadow="sm" p="sm">
-            <Flex align="center" justify="space-between" mb={10}>
+            <Flex align="center" justify="space-between" >
               <Text size="xl" fw={700}>
                 Booking report
               </Text>
@@ -70,7 +65,7 @@ export default function Guide() {
         </Grid.Col>
       </Grid>
       <Space h="lg" />
-      <BookingTable /> */}
+      <BookingTable />
 
     </div>
   );
