@@ -21,7 +21,6 @@ import BookingTable from "@/app/components/guideDashboardComponents/BookingTable
 
 export default function Guide() {
   const [value, setValue] = useState(null);
-  console.log("gudieBookingStatus ", gudieBookingStatus);
 
   const durations = [
     { value: "1months", label: "1 Month" },

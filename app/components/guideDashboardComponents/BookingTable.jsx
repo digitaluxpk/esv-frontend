@@ -24,7 +24,7 @@ export default function BookingTable() {
   const [booking, setShowBooking] = useState("10");
   const [filtersOpened, handleFilters] = useDisclosure(false);
 
-  const rows = booking_table_data.map((element) => (
+  const rows = booking_table_data?.map((element) => (
     <Table.Tr key={element.id}>
       <Table.Td>{element.id}</Table.Td>
       <Table.Td>{element.name}</Table.Td>
@@ -32,12 +32,10 @@ export default function BookingTable() {
       <Table.Td>{element.location}</Table.Td>
       <Table.Td ta="center">{element.participants}</Table.Td>
       <Table.Td>
-{/* {element.guides} */}
 
 <BookingGuides data={element.guides} />
 
       </Table.Td>
-      {/* <Table.Td>{element.action}</Table.Td> */}
 
       <Table.Td>
         <Menu
