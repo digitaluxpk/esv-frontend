@@ -3,11 +3,10 @@
 import {
   Button,
   Center,
+  Divider,
   Flex,
-  Group,
   Modal,
   Select,
-  Slider,
   Text,
 } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
@@ -16,9 +15,9 @@ import { useForm } from "@mantine/form";
 export default function FiltersModal({ opened, close }) {
   const form = useForm({
     initialValues: {
-      location:'ESV1',
-      duration:'Today',
-      catagory:'Youth'
+      location: "ESV1",
+      duration: "Today",
+      catagory: "Youth",
     },
     validate: {},
   });
@@ -33,10 +32,20 @@ export default function FiltersModal({ opened, close }) {
       overlayProps={{
         blur: 3,
       }}
-      title="Filters"
+      title={
+        <Center miw="100%">
+          <Text fw={700} size="lg" align="center">
+            Filter
+          </Text>
+        </Center>
+      }
     >
-      <form onReset={form.onReset} onSubmit={form.onSubmit((values) => console.log(values))}>
-        <Center w={"100%"}>
+      <Divider size="xs"></Divider>
+      <form
+        onReset={form.onReset}
+        onSubmit={form.onSubmit((values) => console.log(values))}
+      >
+        <Center w={"100%"} mt={10}>
           <Flex
             direction={"column"}
             wrap={"wrap"}
@@ -46,11 +55,6 @@ export default function FiltersModal({ opened, close }) {
             gap={"sm"}
             justify={"center"}
           >
-            <Text fw={600} fz={24} ta={"center"}>
-              Filters
-            </Text>
-            
-                     
             <Select
               allowDeselect={false}
               withCheckIcon={false}
@@ -66,7 +70,6 @@ export default function FiltersModal({ opened, close }) {
               size="md"
               value={form.values.duration}
               data={[
-               
                 { value: "Today", label: "Full Day" },
                 { value: "This Week", label: "This Week" },
                 { value: "This Month", label: "This Month" },
@@ -94,7 +97,6 @@ export default function FiltersModal({ opened, close }) {
                 { value: "Youth", label: "Youth" },
                 { value: "Child", label: "Child" },
                 { value: "Old", label: "Old" },
-               
               ]}
               {...form.getInputProps("catagory")}
             />

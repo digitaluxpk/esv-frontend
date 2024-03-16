@@ -10,6 +10,7 @@ import {
   Group,
   Button,
   Anchor,
+  useMantineTheme,
 } from "@mantine/core";
 import {
   IconPhone,
@@ -21,74 +22,90 @@ import {
 import { useState } from "react";
 import Link from "next/link";
 import React from "react";
-export default function TodayBooking({}) {
-  const [showFullWidthButton, setShowFullWidthButton] = useState(false);
+import { today_booking_list } from "@/app/utils/constants";
 
+export default function TodayBooking() {
+  const [showFullWidthButton, setShowFullWidthButton] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const theme = useMantineTheme();
   const toggleVisibility = () => setShowFullWidthButton(!showFullWidthButton);
 
-  const booking = [
-    { id: 1, key: "Name", value: "Miracle" },
-    { id: 2, key: "Participants", value: "2" },
-    { id: 3, key: "Time", value: "09:00 am" },
-    { id: 4, key: "Location", value: "ESV" },
-  ];
+  const handleNext = () => {
+    if (currentIndex < today_booking_list.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const currentBooking = today_booking_list[currentIndex];
 
   return (
-    <Paper shadow="sm" p="sm" mih="100%">
+    <Paper shadow="sm" p="sm" h="100%">
       <Flex align="center" justify="space-between">
         <Text size="xl" fw={700}>
-          Today Booking
+          Today's Booking
         </Text>
 
         <Flex justify="space-between" align="center">
-          <ActionIcon size={42} variant="filled" disabled bg="transparent">
-            <IconChevronLeft stroke={1.5} />
+          <ActionIcon
+            size={42}
+            variant="filled"
+            c={currentIndex === 0 ? "" : "dark"}
+            bg="transparent"
+            onClick={handlePrevious}
+            disabled={currentIndex === 0}
+          >
+            <IconChevronLeft stroke={2} />
           </ActionIcon>
 
           <ActionIcon
             size={42}
             variant="filled"
+            c={currentIndex === today_booking_list.length - 1 ? "" : "dark"}
             bg="none"
-            c="dark"
-            color="dark"
+            onClick={handleNext}
+            disabled={currentIndex === today_booking_list.length - 1}
           >
-            <IconChevronRight stroke={2.5} />
+            <IconChevronRight stroke={2} />
           </ActionIcon>
         </Flex>
       </Flex>
-      <Paper shadow="xs" p="md" bg="#F9F9FB">
+
+      <Paper shadow="xs" p="sm" mt="sm" bg="#F9F9FB">
         <List size="sm" fw={600} component={Group}>
-          <List.Item>MTB Lesson</List.Item>
-          <List.Item>Downhill Youth</List.Item>
-          <List.Item>Beginner</List.Item>
+          {currentBooking.list.map((item, index) => (
+            <List.Item key={index}>{item}</List.Item>
+          ))}
         </List>
+
         <Space h="md" />
         <Grid align="center" justify="space-between" mt={5}>
-          {booking.map((obj) => (
-            <React.Fragment key={obj.id}>
-              <Grid.Col span={5}>
-                <Text size="xs">{obj.key}</Text>
-                <Text size="sm" fw={600}>
-                  {obj.value}
-                </Text>
-              </Grid.Col>
-            </React.Fragment>
+          {currentBooking.info.map((item, index) => (
+            <Grid.Col span={5} key={index}>
+              <Text size="xs">{item.key}</Text>
+              <Text size="sm" fw={600}>
+                {item.value}
+              </Text>
+            </Grid.Col>
           ))}
         </Grid>
         <Space h="lg" />
 
         {showFullWidthButton ? (
-          // Show this button with the updated label when `showFullWidthButton` is true
           <Button
-            bg="black"
-            leftSection={<IconRefresh size={16} />}
             fullWidth
+            bg={theme.colors.dark[7]}
+            leftSection={<IconRefresh size={16} />}
             onClick={toggleVisibility}
           >
             Return Equipment
           </Button>
         ) : (
-          // Show these buttons when `showFullWidthButton` is false
           <Flex align="center" justify="space-between">
             <Button
               size="sm"
@@ -115,10 +132,9 @@ export default function TodayBooking({}) {
 
         <Center>
           <Anchor
-            justify="center"
             size="sm"
             c="dark"
-            href=""
+            href="#"
             component={Link}
             target="_blank"
             underline="always"
