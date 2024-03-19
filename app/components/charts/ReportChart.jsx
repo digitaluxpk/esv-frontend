@@ -1,18 +1,18 @@
 "use client";
 import { useState } from "react";
 import { AreaChart } from "@mantine/charts";
-import { booking_report, durations } from "@/app/utils/constants";
+import { durations } from "@/app/utils/constants";
 import { IconChevronDown } from "@tabler/icons-react";
 
 import { Text, Paper, Flex, Select, Space } from "@mantine/core";
-export default function ReportChart() {
+export default function ReportChart({ graphName, graphReport }) {
   const [value, setValue] = useState(null);
 
   return (
     <Paper shadow="sm" p="sm">
       <Flex align="center" justify="space-between">
         <Text size="xl" fw={700}>
-          Booking report
+          {graphName}
         </Text>
         <Select
           mih={30}
@@ -29,9 +29,9 @@ export default function ReportChart() {
       <Space h="md" />
       <AreaChart
         h={290}
-        data={booking_report}
+        data={graphReport}
         dataKey="date"
-        series={[{ name: "Bookings", color: "indigo.6" }]}
+        series={[{ name: "bookings", color: "indigo.6" }]}
         curveType="monotone"
         connectNulls
       />

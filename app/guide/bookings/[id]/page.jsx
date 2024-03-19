@@ -164,6 +164,7 @@ export default function Bookings() {
           )}
           {(activityStatus === "accepted" || activityStatus === "ongoing") && (
             <Button
+              mr={20}
               leftSection={<IconBell size={16} />}
               variant="default"
               onClick={() => {}}
@@ -187,6 +188,7 @@ export default function Bookings() {
               <>
                 {returnEquipmentClicked && (
                   <Button
+                    mr={20}
                     leftSection={<IconPhone size={16} />}
                     variant="default"
                     onClick={() => {}}
