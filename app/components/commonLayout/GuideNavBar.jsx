@@ -1,6 +1,7 @@
 "use client";
 
 import { ActionIcon, AppShell, Flex, NavLink, Text } from "@mantine/core";
+
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -13,6 +14,7 @@ import {
 
 export default function GuideNavBar({}) {
   const [active, setActive] = useState(0);
+
   return (
     <AppShell.Navbar>
       <AppShell.Section>

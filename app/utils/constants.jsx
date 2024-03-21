@@ -1101,44 +1101,156 @@ const invoiceDetailTableData = [
   },
 ];
 
+// settings
 
-// settings 
-
-const userLocationsList=[
+const userLocationsList = [
   {
-    id:1,
-    location:'Any',
-    value:'any',
+    id: 1,
+    location: "Any",
+    value: "any",
   },
-  
+
   {
-  id:2,
-  location:'ESV L1',
-  value:'esvl1',
-},
-{
-  id:3,
-  location:'ESV L2',
-  value:'esvl2',
-},
-{
-  id:4,
-  location:'ESV L3',
-  value:'esvl3',
-},
-{
-  id:5,
-  location:'ESV L4',
-  value:'esvl4',
-},
-{
-  id:6,
-  location:'ESV L5',
-  value:'esvl5',
-}
+    id: 2,
+    location: "ESV L1",
+    value: "esvl1",
+  },
+  {
+    id: 3,
+    location: "ESV L2",
+    value: "esvl2",
+  },
+  {
+    id: 4,
+    location: "ESV L3",
+    value: "esvl3",
+  },
+  {
+    id: 5,
+    location: "ESV L4",
+    value: "esvl4",
+  },
+  {
+    id: 6,
+    location: "ESV L5",
+    value: "esvl5",
+  },
+];
 
+// notifications
 
-]
+const newBooking = [
+  {
+    list: ["MTB Lesson", "Downhill Youth", "Beginner"],
+    info: [
+      { key: "Date", value: "24/02/2024 - 26/02/2024" },
+      { key: "Participants", value: "2" },
+      { key: "Other Guides", value: "-" },
+      { key: "Location", value: "ESV1" },
+    ],
+  },
+];
+
+const guideNotificationsList = [
+  {
+    id: 1,
+    title: "New Booking Request",
+    time: "9 hours ago",
+    status: "new",
+    detail: [
+      {
+        list: ["MTB Lesson", "Downhill Youth", "Beginner"],
+        info: [
+          { key: "Date", value: "24/02/2024 - 26/02/2024" },
+          { key: "Participants", value: "2" },
+          { key: "Other Guides", value: "-" },
+          { key: "Location", value: "ESV1" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: " Booking Completed",
+    description:
+      "The advent of algorithmic trading and machine learning algorithms is reshaping market dynamics. ",
+    time: "9 hours ago",
+    status: "completed",
+  },
+  {
+    id: 3,
+    title: " Booking Completed",
+    description:
+      "The advent of algorithmic trading and machine learning algorithms is reshaping market dynamics. ",
+    time: "9 hours ago",
+    status: "completed",
+  },
+  {
+    id: 4,
+    title: " Booking Completed",
+    description:
+      "The advent of algorithmic trading and machine learning algorithms is reshaping market dynamics. ",
+    time: "9 hours ago",
+    status: "completed",
+  },
+  {
+    id: 5,
+    title: " Booking Completed",
+    description:
+      "The advent of algorithmic trading and machine learning algorithms is reshaping market dynamics. ",
+    time: "9 hours ago",
+    status: "completed",
+  },
+  {
+    id: 6,
+    title: " Booking Completed",
+    description:
+      "The advent of algorithmic trading and machine learning algorithms is reshaping market dynamics. ",
+    time: "9 hours ago",
+    status: "completed",
+  },
+  {
+    id: 7,
+    title: " Booking Completed",
+    description:
+      "The advent of algorithmic trading and machine learning algorithms is reshaping market dynamics. ",
+    time: "9 hours ago",
+    status: "completed",
+  },
+  {
+    id: 8,
+    title: "New Booking Request",
+    time: "9 hours ago",
+    status: "new",
+    detail: [
+      {
+        list: ["MTB Lesson", "Downhill Youth", "Beginner"],
+        info: [
+          { key: "Date", value: "24/02/2024 - 26/02/2024" },
+          { key: "Participants", value: "2" },
+          { key: "Other Guides", value: "-" },
+          { key: "Location", value: "ESV1" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: " Booking Completed",
+    description:
+      "The advent of algorithmic trading and machine learning algorithms is reshaping market dynamics. ",
+    time: "9 hours ago",
+    status: "completed",
+  },
+  {
+    id: 10,
+    title: " Booking Completed",
+    description:
+      "The advent of algorithmic trading and machine learning algorithms is reshaping market dynamics. ",
+    time: "9 hours ago",
+    status: "completed",
+  },
+];
 
 export {
   gudieBookingStatus,
@@ -1159,5 +1271,8 @@ export {
   invoice_table_data,
   invoiceDetail,
   invoiceDetailTableHeader,
-  invoiceDetailTableData,userLocationsList
+  invoiceDetailTableData,
+  userLocationsList,
+  newBooking,
+  guideNotificationsList,
 };

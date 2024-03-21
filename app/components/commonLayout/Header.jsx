@@ -11,18 +11,21 @@ import {
   Image,
   Menu,
   Text,
+  Drawer,
 } from "@mantine/core";
 import Link from "next/link";
-import { IconPlus } from '@tabler/icons-react';
-import { IconChevronDown } from '@tabler/icons-react';
-import { IconBell } from '@tabler/icons-react';
-
+import { IconPlus } from "@tabler/icons-react";
+import { IconChevronDown } from "@tabler/icons-react";
+import { IconBell } from "@tabler/icons-react";
+import { useDisclosure } from "@mantine/hooks";
+import GuideNotificationsDrawer from "@/app/components/drawer/guideNotificationsDrawer";
 export default function Header({
   toggleMobile,
   mobileOpened,
   desktopOpened,
   toggleDesktop,
 }) {
+  const [openedDrawer, { open, close }] = useDisclosure(false);
   return (
     <AppShell.Header>
       <Group h="100%" justify="space-between" pl="md">
@@ -54,8 +57,13 @@ export default function Header({
           <Button visibleFrom="xs" radius={0} leftSection={<IconPlus />}>
             Create New Booking
           </Button>
-          <ActionIcon c={"black"} size={"xl"} variant="transparent">
-            <IconBell  width={26} />
+          <ActionIcon
+            c={"black"}
+            size={"xl"}
+            variant="transparent"
+            onClick={open}
+          >
+            <IconBell width={26} />
           </ActionIcon>
           <Menu position="bottom-end" withArrow>
             <Menu.Target>
@@ -78,6 +86,7 @@ export default function Header({
           </Menu>
         </Group>
       </Group>
+      <GuideNotificationsDrawer opened={openedDrawer} onClose={close} />
     </AppShell.Header>
   );
 }
