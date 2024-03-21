@@ -1101,6 +1101,45 @@ const invoiceDetailTableData = [
   },
 ];
 
+
+// settings 
+
+const userLocationsList=[
+  {
+    id:1,
+    location:'Any',
+    value:'any',
+  },
+  
+  {
+  id:2,
+  location:'ESV L1',
+  value:'esvl1',
+},
+{
+  id:3,
+  location:'ESV L2',
+  value:'esvl2',
+},
+{
+  id:4,
+  location:'ESV L3',
+  value:'esvl3',
+},
+{
+  id:5,
+  location:'ESV L4',
+  value:'esvl4',
+},
+{
+  id:6,
+  location:'ESV L5',
+  value:'esvl5',
+}
+
+
+]
+
 export {
   gudieBookingStatus,
   booking_report,
@@ -1120,5 +1159,5 @@ export {
   invoice_table_data,
   invoiceDetail,
   invoiceDetailTableHeader,
-  invoiceDetailTableData,
+  invoiceDetailTableData,userLocationsList
 };
