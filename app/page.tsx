@@ -14,6 +14,12 @@ export default function HomePage() {
       <Button component={Link} href="/guide">
         Navigate to Guide dashboard
       </Button>
+
+      <Button component={Link} href="/vendor">
+        Navigate to Vendor dashboard
+      </Button>
+
+
       <Group>
       <Button onClick={() => setColorScheme('light')}>Light</Button>
       <Button onClick={() => setColorScheme('dark')}>Dark</Button>
