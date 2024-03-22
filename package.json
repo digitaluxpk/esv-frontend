@@ -33,5 +33,4 @@
     "postcss-simple-vars": "^7.0.1",
     "typescript": "5.2.2"
   }
-  // "packageManager": "yarn@4.0.1"
 }
