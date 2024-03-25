@@ -6,6 +6,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Text, Group, Flex, Image, Button } from "@mantine/core";
 import AvailabiltySelection from "@/app/components/modals/AvailabiltySelection";
 import { convertDates } from "@/app/utils/helpers";
+import BookingDetail from "@/app/components/drawer/bookingDetail";
 import "./styles.css";
 
 export default function GuideSchedule() {
@@ -30,7 +31,7 @@ export default function GuideSchedule() {
   ]);
   const handleAvailableDates = (values) => {
     // Convert existing event dates to a Set for efficient lookups
-    const existingDatesSet = new Set(events?.map(event => event.start));
+    const existingDatesSet = new Set(events?.map((event) => event.start));
     // Create and filter new events in a single iteration
     const filteredNewEvents = convertDates(values).reduce((acc, date) => {
       if (!existingDatesSet.has(date)) {
@@ -40,9 +41,8 @@ export default function GuideSchedule() {
     }, []);
     setEvents([...events, ...filteredNewEvents]);
   };
-  
+
   const handleEventClick = (clickInfo) => {
-    // Functionality to view event details
     handleViewEvent.open();
   };
 
@@ -76,17 +76,10 @@ export default function GuideSchedule() {
         events={events} // Set the events state
         eventClick={handleEventClick} // Handle event click
       />
-      <Drawer
-        opened={eventOpened}
-        onClose={() => handleViewEvent.close()}
-        title="Authentication"
-        withCloseButton={false}
-        position="right"
-        size="xl"
-      >
-        {/* Drawer content */}
-        hello
-      </Drawer>
+      <BookingDetail
+        eventOpened={eventOpened}
+        handleViewEvent={handleViewEvent}
+      />
       <AvailabiltySelection
         opened={availablityOpened}
         close={() => handleAddAvailablity.close()}
