@@ -1,0 +1,40 @@
+/* Date picker customization */
+
+.mantine-DatePicker-calendarHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Align the month to the left */
+.mantine-DatePicker-calendarHeaderLevel {
+  justify-content: start;
+  order: 1;
+}
+
+/* Align the navigation buttons to the right */
+.mantine-DatePicker-calendarHeaderControl {
+  order: 2;
+}
+
+.mantine-DatePicker-day {
+  border-radius: 100%;
+  border: 1px solid rgba(163, 163, 163, 0.5);
+  margin: 4px;
+}
+
+.mantine-DatePicker-weekdaysRow {
+  --wr-fz: var(--mantine-font-size-md) !important;
+}
+
+.m-396ce5cb:where([data-weekend]) {
+  color: inherit;
+}
+
+.m-396ce5cb:where([data-selected]):hover {
+  background-color: rgb(64, 64, 64);
+}
+
+.m-396ce5cb:where([data-selected]) {
+  background-color: black;
+  color: white;
+}

@@ -3,92 +3,82 @@ import FullCalendar from "@fullcalendar/react";
 import { useState } from "react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { useDisclosure } from "@mantine/hooks";
-import { Drawer, ThemeIcon } from "@mantine/core";
-import { IconPhoto } from "@tabler/icons-react";
-
-const CustomHeaderComponent = () => {
-  return (
-    <>
-      <ThemeIcon>
-        <IconPhoto style={{ width: "70%", height: "70%" }} />
-      </ThemeIcon>
-      <Text>customComponent</Text>
-    </>
-  );
-};
+import { Drawer, Text, Group, Flex, Image, Button } from "@mantine/core";
+import AvailabiltySelection from "@/app/components/modals/AvailabiltySelection";
+import { convertDates } from "@/app/utils/helpers";
+import "./styles.css";
 
 export default function GuideSchedule() {
-  const [currentEvents, setCurrentEvents] = useState([]);
-  const [newEventOpened, handleNeweEvent] = useDisclosure(false);
-
-  const handleDateSelect = (selectInfo) => {
-    console.log("helllo date selected");
-    let title = prompt("Please enter a new title for your event");
-    let calendarApi = selectInfo.view.calendar;
-
-    calendarApi.unselect(); // clear date selection
-
-    if (title) {
-      calendarApi.addEvent({
-        id: createEventId(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay,
-      });
-    }
+  const [availablityOpened, handleAddAvailablity] = useDisclosure(false);
+  const [eventOpened, handleViewEvent] = useDisclosure(false);
+  const [events, setEvents] = useState([
+    {
+      title: "Full Day",
+      start: new Date("2024-03-24T14:20+01:00").toISOString(),
+      end: new Date("2024-03-29"),
+    },
+    { start: new Date("2024-03-06T14:20+01:00").toISOString() },
+    { title: "", start: new Date("2024-03-06T16:20+01:00").toISOString() },
+    {
+      start: "2024-03-24",
+      display: "background",
+    },
+    {
+      start: "2024-03-06",
+      display: "background",
+    },
+  ]);
+  const handleAvailableDates = (values) => {
+    // Convert existing event dates to a Set for efficient lookups
+    const existingDatesSet = new Set(events?.map(event => event.start));
+    // Create and filter new events in a single iteration
+    const filteredNewEvents = convertDates(values).reduce((acc, date) => {
+      if (!existingDatesSet.has(date)) {
+        acc.push({ start: date, display: "background" });
+      }
+      return acc;
+    }, []);
+    setEvents([...events, ...filteredNewEvents]);
   };
-
-  function handleEventClick(clickInfo) {
-    if (
-      confirm(
-        `Are you sure you want to delete the event '${clickInfo.event.title}'`
-      )
-    ) {
-      clickInfo.event.remove();
-    }
-  }
-
-  function handleEvents(events) {
-    setCurrentEvents(events);
-  }
-
-  const handleAddAvailablity = () => {
-    handleNeweEvent.open();
+  
+  const handleEventClick = (clickInfo) => {
+    // Functionality to view event details
+    handleViewEvent.open();
   };
 
   return (
     <>
+      <Flex direction={"row"} gap={"md"} align={"center"} justify={"end"}>
+        <Group>
+          <Image src={"/assets/svg/white-icon.svg"} />
+          <Text>Unavailable</Text>
+        </Group>
+        <Group>
+          <Image src={"/assets/svg/gray-icon.svg"} />
+          <Text>Available</Text>
+        </Group>
+        <Button
+          bg="#292929"
+          radius={0}
+          onClick={() => handleAddAvailablity.open()}
+        >
+          Add availability
+        </Button>
+      </Flex>
       <FullCalendar
-        plugins={[dayGridPlugin]}
         headerToolbar={{
           start: "title prev,next",
-          center: "customComponent",
-          end: "customComponent addAvailability",
+          right: "",
         }}
-        customButtons={{
-          addAvailability: {
-            text: "Add availability",
-            click: handleAddAvailablity,
-          },
-        }}
-        customViews={{
-          customComponent: <CustomHeaderComponent />,
-        }}
+        initialDate={new Date()}
+        plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
-        selectable={true}
-        select={() => handleDateSelect()}
-        eventClick={handleEventClick}
-        eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-        /* you can update a remote database when these fire:
-      eventAdd={function(){}}
-      eventChange={function(){}}
-      eventRemove={function(){}}
-      */
+        events={events} // Set the events state
+        eventClick={handleEventClick} // Handle event click
       />
       <Drawer
-        opened={newEventOpened}
-        onClose={() => handleNeweEvent.close()}
+        opened={eventOpened}
+        onClose={() => handleViewEvent.close()}
         title="Authentication"
         withCloseButton={false}
         position="right"
@@ -97,6 +87,11 @@ export default function GuideSchedule() {
         {/* Drawer content */}
         hello
       </Drawer>
+      <AvailabiltySelection
+        opened={availablityOpened}
+        close={() => handleAddAvailablity.close()}
+        handleAvailableDates={handleAvailableDates}
+      />
     </>
   );
 }

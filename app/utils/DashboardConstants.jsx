@@ -1,4 +1,4 @@
-export {gudieBookingStatus,booking_report}
+export {gudieBookingStatus,booking_report, locations}
 
 const gudieBookingStatus=[
     {
@@ -87,3 +87,4 @@ const gudieBookingStatus=[
   },
 
 ];
+const locations = ["ESV L1", "ESV L2", "ESV L3", "ESV L4", "ESV L5", "ESV L6"];
