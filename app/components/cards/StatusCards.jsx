@@ -15,19 +15,21 @@ export default function StatusCards({ booking, count }) {
 
   return (
     <Grid.Col span={count}>
-      <Paper shadow="sm" p={booking.performance ? "sm" : "md"}>
+      <Paper shadow="sm" p={booking.performance ? "sm" :booking.chf?"sm": "md"}>
         <Text size="sm" c="{grey.8}" fw={500}>
           {booking.title}
         </Text>
+
+
         <Text
           size="md"
           c="{grey.8}"
-          fw={booking.performance ? 600 : "bold"}
-          mt={booking.performance ? 4 : 13}
+          fw={booking.performance ? 600 :booking.chf?700: "bold"}
+          mt={booking.performance ? 4 :booking.chf?6:13}
         >
           {booking.count}
         </Text>
-        {booking.performance && (
+        {booking.performance ? (
           <Flex align="center" justify="space-between" mt={4} h={30}>
             <Flex bg={backgroundColor} justify="flex-start" align="center">
               {booking?.performance === "profit" ? (
@@ -43,6 +45,14 @@ export default function StatusCards({ booking, count }) {
               {booking.performance_text}
             </Text>
           </Flex>
+        ):(      
+          <Flex align="center" justify="flex-start" mt={4} h={30}>
+          <Text size="xs" fw={600}>
+          {booking.chf} {" "} <span style={{fontWeight:500,fontSize:'10px'}} >{booking.item}</span>
+        </Text>
+        
+        </Flex>
+        
         )}
       </Paper>
     </Grid.Col>

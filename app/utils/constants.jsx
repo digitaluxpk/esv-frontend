@@ -1252,6 +1252,652 @@ const guideNotificationsList = [
   },
 ];
 
+
+
+
+// vendor dashboard 
+
+const vendorBookingStatus = [
+  {
+    id: 1,
+    title: "Available Bikes",
+    count: "57",
+    chf:"CHF 12 ",
+    item:'per bike'
+
+  },
+  {
+    id: 2,
+    title: "Available Protection",
+    count: "25",
+    chf:"CHF 12 ",
+    item:"per protection"
+  },
+  {
+    id: 3,
+    title: "Ongoing Booking",
+    count: "49",
+    performance: "profit",
+    performance_count: "19%",
+    performance_text: "Compare to the last month",
+  },
+  {
+    id: 4,
+    title: "Total Bookings",
+    count: "24,45",
+    performance: "loss",
+    performance_count: "12.9%",
+    performance_text: "Compare to the last month",
+  },
+];
+
+// new booking 
+
+const vendorNewBookingTableHeader = [
+  {
+    id: 1,
+    name: "Product Name",
+  },
+  { id: 2, name: "Fulfilment Date(s)" },
+  { id: 3, name: "Location" },
+  { id: 4, name: "Bikes" },
+  { id: 5, name: "Height (cm)" },
+  { id: 6, name: "Protections" },
+  { id: 7, name: "Guides" },
+  { id: 8, name: "Actions" },
+];
+
+const vendorNewBookingTableData = [
+  {
+    id: 1,
+    
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 3,
+        name: "Faizan",
+        img: "/assets/images/avatar1.png",
+      },
+    ],
+    action: "",
+  },
+  {
+    id: 2,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      
+    ],
+    action: "",
+  },
+  {
+    id: 3,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides:[],
+    action: "",
+  },
+  {
+    id: 4,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      
+    ],
+    action: "",
+  },
+  {
+    id: 5,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides:[],
+    action: "",
+  },
+  {
+    id: 6,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 3,
+        name: "Faizan",
+        img: "/assets/images/avatar1.png",
+      },
+    ],
+    action: "",
+  },
+  {
+    id: 7,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides:[],
+    action: "",
+  },
+  {
+    id: 8,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      
+    ],
+    action: "",
+  },
+  {
+    id: 9,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+guides:[],
+    action: "",
+  },
+  {
+    id: 10,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      
+    ],
+    action: "",
+  },
+  {
+    id: 11,
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 3,
+        name: "Faizan",
+        img: "/assets/images/avatar1.png",
+      },
+    ],
+    action: "",
+  },
+];
+
+// ongoing booking
+
+const vendorOngoingBookingTableHeader = [
+  {
+    id: 1,
+    name: "Order ID",
+  },
+  { id: 2, name: "Fulfilment Date(s)" },
+  { id: 3, name: "Customer Name " },
+  { id: 4, name: "Catagory" },
+  { id: 5, name: "Product name" },
+  { id: 6, name: "Bike type" },
+  { id: 7, name: "Bikes" },
+  { id: 8, name: "Height (cm)" } ,
+  { id: 9, name: "Protections" },
+  { id: 10, name: "Guides" },
+  { id: 11, name: "Amount" },
+  { id: 12, name: " Fulfilment status" },
+  { id: 13, name: "Equipment status" },
+  { id: 14, name: "More" }, 
+];
+
+const vendorOngoingBookingTableData = [
+  {
+    id: 1,
+    orderId:'#12780',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },{
+        id:2,name:'E-Bike'
+      }
+    ],
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 3,
+        name: "Faizan",
+        img: "/assets/images/avatar1.png",
+      },
+    ],
+    action: "",
+  },
+  {
+    id: 2,
+    orderId:'#12781',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },{
+        id:2,name:'E-Bike'
+      }
+    ],
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      
+    ],
+    action: "",
+  },
+  {
+    id: 3,
+    orderId:'#12782',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },
+    ],
+    guides:[],
+    action: "",
+  },
+  {
+    id: 4,
+    orderId:'#12783',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },{
+        id:2,name:'E-Bike'
+      }
+    ],
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      
+    ],
+    action: "",
+  },
+  {
+    id: 5,
+    orderId:'#12784',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },
+    ],
+    guides:[],
+    action: "",
+  },
+  {
+    id: 6,
+    orderId:'#12785',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+     {
+        id:2,name:'E-Bike'
+      }
+    ],
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 3,
+        name: "Faizan",
+        img: "/assets/images/avatar1.png",
+      },
+    ],
+    action: "",
+  },
+  {
+    id: 7,
+    orderId:'#12785',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },
+    ],
+    guides:[],
+    action: "",
+  },
+  {
+    id: 8,
+    orderId:'#12785',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },{
+        id:2,name:'E-Bike'
+      }
+    ],
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      
+    ],
+    action: "",
+  },
+  {
+    id: 9,
+    orderId:'#12785',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+     
+    ],
+guides:[],
+    action: "",
+  },
+  {
+    id: 10,
+    orderId:'#12785',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },{
+        id:2,name:'E-Bike'
+      }
+    ],
+    guides: [
+      
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      
+    ],
+    action: "",
+  },
+  {
+    id: 11,
+    orderId:'#12785',
+    customer:'Lindsey',
+    catagory:'Adults',
+    prod_name: "Cabane Brunet Beginner Private",
+    date: "24/02/2024",
+    location: "ESV L1",
+    bikes: "6",
+    heights: '176',
+    total:' 5+ more',
+    protections:'6',
+    amount:'CHF 25',
+    fulfilment_status:'Ongoing',
+    equipment_status:'Accepted',
+    bikeTypes:[
+      {
+        id:1,name:'Enduro'
+      },
+    ],
+    guides: [
+      {
+        id: 1,
+        name: "Ahmad",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "Naveed",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 3,
+        name: "Faizan",
+        img: "/assets/images/avatar1.png",
+      },
+    ],
+    action: "",
+  },
+];
+
+
 export {
   gudieBookingStatus,
   booking_report,
@@ -1274,5 +1920,5 @@ export {
   invoiceDetailTableData,
   userLocationsList,
   newBooking,
-  guideNotificationsList,
+  guideNotificationsList,vendorBookingStatus,vendorNewBookingTableHeader,vendorNewBookingTableData,vendorOngoingBookingTableHeader,vendorOngoingBookingTableData
 };
