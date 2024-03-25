@@ -12,7 +12,7 @@ import {
 import { useState } from "react";
 import { DatePicker } from "@mantine/dates";
 import { useMultiSelection } from "@/app/hooks/useMultiSelection";
-import { locations } from "@/app/utils/DashboardConstants";
+import { locations } from "@/app/utils/constants";
 import "./styles.css";
 
 export default function AvailabiltySelection({

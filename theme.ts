@@ -43,7 +43,23 @@ export const theme = createTheme({
         "#333333",
         "#1a1a1a",
         "#000000"
-      ]
+      ],
+
+      skyBlue:[
+        "#ebf7ff",
+        "#d6ebfa",
+        "#a6d6f7",
+        "#75c0f6",
+        "#53adf5",
+        "#41a2f5",
+        "#389cf6",
+        "#2c88db",
+        "#2079c4",
+        "#0068ad"
+      ],
+     
   },
+
+ 
   fontSmoothing: true,
 });
