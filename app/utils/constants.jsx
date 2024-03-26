@@ -5,9 +5,16 @@ export {
   booking_table_data,
   ongoing_booking_table_data,
   durations,
-  today_booking_list,booking_history_table_header,booking_history_table_data,ongoing_booking_table_header,bookingDetails,contacts_list
+  today_booking_list,
+  booking_history_table_header,
+  booking_history_table_data,
+  ongoing_booking_table_header,
+  bookingDetails,
+  contacts_list,
+  locations,
 };
 
+const locations = ["ESV L1", "ESV L2", "ESV L3", "ESV L4", "ESV L5", "ESV L6"];
 const gudieBookingStatus = [
   {
     id: 1,
@@ -319,19 +326,20 @@ const booking_table_data = [
 
 const ongoing_booking_table_header = [
   {
-   id:1, name: "Booking ID"},
-   { id:2, name: "Fulfilment Date(s)"},
-   { id:3, name: "Name"},
-   {id:4, name: "Catagory"},
-   {id:5, name: "Product Name"},
-   {id:6, name: "Booking Status"},
-   {id:7, name: "Details",
+    id: 1,
+    name: "Booking ID",
   },
+  { id: 2, name: "Fulfilment Date(s)" },
+  { id: 3, name: "Name" },
+  { id: 4, name: "Catagory" },
+  { id: 5, name: "Product Name" },
+  { id: 6, name: "Booking Status" },
+  { id: 7, name: "Details" },
 ];
 
 const ongoing_booking_table_data = [
   {
-    id:1 ,
+    id: 1,
     booking_id: "#12785",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -341,7 +349,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:2 ,
+    id: 2,
     booking_id: "#12786",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -352,7 +360,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:3 ,
+    id: 3,
     booking_id: "#12787",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -363,7 +371,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:4 ,
+    id: 4,
     booking_id: "#12788",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -374,7 +382,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:5 ,
+    id: 5,
     booking_id: "#12789",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -385,7 +393,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:6 ,
+    id: 6,
     booking_id: "#12790",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -407,7 +415,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:8 ,
+    id: 8,
     booking_id: "#12792",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -418,7 +426,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:9 ,
+    id: 9,
     booking_id: "#12793",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -429,7 +437,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:10 ,
+    id: 10,
     booking_id: "#12794",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -440,7 +448,7 @@ const ongoing_booking_table_data = [
     action: "",
   },
   {
-    id:11 ,
+    id: 11,
     booking_id: "#12795",
     prod_name: "Cabane Brunet Beginner Private Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -505,19 +513,20 @@ const today_booking_list = [
 
 const booking_history_table_header = [
   {
-    id:1, name: "Booking ID"},
-    { id:2, name: "Fulfilment Date(s)"},
-    { id:3, name: "Name"},
-    {id:4, name: "Catagory"},
-    {id:5, name: "Product Name"},
-    {id:6, name: "Booking Status"},
-    {id:7, name: "Details",
-   },
+    id: 1,
+    name: "Booking ID",
+  },
+  { id: 2, name: "Fulfilment Date(s)" },
+  { id: 3, name: "Name" },
+  { id: 4, name: "Catagory" },
+  { id: 5, name: "Product Name" },
+  { id: 6, name: "Booking Status" },
+  { id: 7, name: "Details" },
 ];
 
 const booking_history_table_data = [
   {
-    id:1,
+    id: 1,
     booking_id: "#12785",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -527,7 +536,7 @@ const booking_history_table_data = [
     action: "",
   },
   {
-    id:2,
+    id: 2,
     booking_id: "#12786",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -560,7 +569,7 @@ const booking_history_table_data = [
     action: "",
   },
   {
-    id:5 ,
+    id: 5,
     booking_id: "#12789",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -571,7 +580,7 @@ const booking_history_table_data = [
     action: "",
   },
   {
-    id:6 ,
+    id: 6,
     booking_id: "#12790",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -582,7 +591,7 @@ const booking_history_table_data = [
     action: "",
   },
   {
-    id:7 ,
+    id: 7,
     booking_id: "#12791",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -604,7 +613,7 @@ const booking_history_table_data = [
     action: "",
   },
   {
-    id:9 ,
+    id: 9,
     booking_id: "#12793",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -615,7 +624,7 @@ const booking_history_table_data = [
     action: "",
   },
   {
-    id:10 ,
+    id: 10,
     booking_id: "#12794",
     prod_name: "Cabane Brunet Beginner Private",
     date: "24/02/2024",
@@ -639,81 +648,85 @@ const booking_history_table_data = [
 ];
 
 const bookingDetails = [
-  { label: 'Customer Name', value: 'Miracle' },
-  { label: 'Fulfilment dates(s)', value: '24/02/2024' },
-  { label: 'Start Date & Time', value: '-' },
-  { label: 'End Date & Time', value: '-' },
-  { label: 'Duration', value: 'Half Day' },
-  { label: 'Participants', value: '2' },
-  { label: 'Category', value: 'Youth' },
-  { label: 'Location', value: 'ESV' },
-  { label: 'Product', value: 'MTB Lesson • Downhill' },
-  { label: 'Level', value: 'Youth • Beginner' },
-  { label: 'Guides', guides: [
-    {
-      id: 1,
-      name: "John",
-      img: "/assets/images/avatar1.png",
-    },
-  ],},
-  { label: 'Vendor', guides: [
-    {
-      id: 1,
-      name: "Theo",
-      img: "/assets/images/avatar1.png",
-    },
-    {
-      id: 2,
-      name: "John",
-      img: "/assets/images/avatar1.png",
-    },
-  ], },
-  { label: 'Lead', value: 'Marcus Westervelt' },
-  { label: 'Angel', value: 'Cristofer' },
-  { label: 'Number of Bikes', value: '5' },
-  { label: 'Number of Prot. Packs', value: '5' },
-  { label: 'Amount', value: 'CHF 275.00' },
-  { label: 'Payment Group', value: 'Group 1' },
-  { label: 'Your Earning', value: 'CHF 20.00' }
+  { label: "Customer Name", value: "Miracle" },
+  { label: "Fulfilment dates(s)", value: "24/02/2024" },
+  { label: "Start Date & Time", value: "-" },
+  { label: "End Date & Time", value: "-" },
+  { label: "Duration", value: "Half Day" },
+  { label: "Participants", value: "2" },
+  { label: "Category", value: "Youth" },
+  { label: "Location", value: "ESV" },
+  { label: "Product", value: "MTB Lesson • Downhill" },
+  { label: "Level", value: "Youth • Beginner" },
+  {
+    label: "Guides",
+    guides: [
+      {
+        id: 1,
+        name: "John",
+        img: "/assets/images/avatar1.png",
+      },
+    ],
+  },
+  {
+    label: "Vendor",
+    guides: [
+      {
+        id: 1,
+        name: "Theo",
+        img: "/assets/images/avatar1.png",
+      },
+      {
+        id: 2,
+        name: "John",
+        img: "/assets/images/avatar1.png",
+      },
+    ],
+  },
+  { label: "Lead", value: "Marcus Westervelt" },
+  { label: "Angel", value: "Cristofer" },
+  { label: "Number of Bikes", value: "5" },
+  { label: "Number of Prot. Packs", value: "5" },
+  { label: "Amount", value: "CHF 275.00" },
+  { label: "Payment Group", value: "Group 1" },
+  { label: "Your Earning", value: "CHF 20.00" },
 ];
 
-const contacts_list=[
+const contacts_list = [
   {
-    id:1,
-    name:'Mira Herwitz',
-    role:'Customer',
-    phone:'+991248654265',
-    email:'rbrajumullah100@gmail.com',
-    action:'',
-    isLead:false
+    id: 1,
+    name: "Mira Herwitz",
+    role: "Customer",
+    phone: "+991248654265",
+    email: "rbrajumullah100@gmail.com",
+    action: "",
+    isLead: false,
   },
   {
-    id:2,
-    name:'Corey Bergson',
-    role:'Vendor',
-    phone:'+991248654265',
-    email:'rbrajumullah100@gmail.com',
-    action:'',
-    isLead:true
+    id: 2,
+    name: "Corey Bergson",
+    role: "Vendor",
+    phone: "+991248654265",
+    email: "rbrajumullah100@gmail.com",
+    action: "",
+    isLead: true,
   },
   {
-    id:3,
-    name:'Mira Herwitz',
-    role:'Guide',
-    phone:'+991248654265',
-    email:'rbrajumullah100@gmail.com',
-    action:'',
-    isLead:false
+    id: 3,
+    name: "Mira Herwitz",
+    role: "Guide",
+    phone: "+991248654265",
+    email: "rbrajumullah100@gmail.com",
+    action: "",
+    isLead: false,
   },
   {
-    id:4,
-    name:'Corey Bergson',
-    role:'Guide',
-    phone:'+991248654265',
-    email:'rbrajumullah100@gmail.com',
-    action:'',
-    isLead:false
-  }
-]
-
-
+    id: 4,
+    name: "Corey Bergson",
+    role: "Guide",
+    phone: "+991248654265",
+    email: "rbrajumullah100@gmail.com",
+    action: "",
+    isLead: false,
+  },
+];

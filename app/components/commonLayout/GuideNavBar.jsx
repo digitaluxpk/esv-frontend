@@ -2,7 +2,6 @@
 
 import { ActionIcon, AppShell, Flex, NavLink, Text } from "@mantine/core";
 import Link from "next/link";
-import { useState } from "react";
 import {
   IconCalendarStats,
   IconLayoutGrid,
@@ -10,9 +9,10 @@ import {
   IconCalendarCheck,
   IconMoneybag,
 } from "@tabler/icons-react";
+import { usePathname } from "next/navigation";
 
 export default function GuideNavBar({}) {
-  const [active, setActive] = useState(0);
+  const pathname = usePathname();
   return (
     <AppShell.Navbar>
       <AppShell.Section>
@@ -20,8 +20,7 @@ export default function GuideNavBar({}) {
           <NavLink
             component={Link}
             href="/guide"
-            active={active === 0}
-            onClick={() => setActive(0)}
+            active={pathname.includes("/guide/dashboard")}
             label={
               <Text fz={16} fw={400}>
                 Dashboard
@@ -29,7 +28,7 @@ export default function GuideNavBar({}) {
             }
             leftSection={
               <ActionIcon
-                c={active === 0 ? "primary-red" : "black"}
+                c={pathname.includes("/guide/dashboard") ? "primary-red" : "black"}
                 variant="transparent"
               >
                 <IconLayoutGrid stroke={1.5} />
@@ -39,8 +38,7 @@ export default function GuideNavBar({}) {
           <NavLink
             component={Link}
             href="/guide/schedule"
-            active={active === 1}
-            onClick={() => setActive(1)}
+            active={pathname.includes("/guide/schedule")}
             label={
               <Text fz={16} fw={400}>
                 Schedule
@@ -48,7 +46,7 @@ export default function GuideNavBar({}) {
             }
             leftSection={
               <ActionIcon
-                c={active === 1 ? "primary-red" : "black"}
+                c={pathname.includes("/guide/schedule") ? "primary-red" : "black"}
                 variant="transparent"
               >
                 <IconCalendarCheck stroke={1.5} />
@@ -58,8 +56,7 @@ export default function GuideNavBar({}) {
           <NavLink
             component={Link}
             href="/guide/invoice"
-            active={active === 2}
-            onClick={() => setActive(2)}
+            active={pathname.includes("/guide/invoice")}
             label={
               <Text fz={16} fw={400}>
                 Invoice
@@ -67,7 +64,7 @@ export default function GuideNavBar({}) {
             }
             leftSection={
               <ActionIcon
-                c={active === 2 ? "primary-red" : "black"}
+                c={pathname.includes("/guide/invoice") ? "primary-red" : "black"}
                 variant="transparent"
               >
                 <IconMoneybag stroke={1.5} />
@@ -77,8 +74,7 @@ export default function GuideNavBar({}) {
           <NavLink
             component={Link}
             href="/guide/bookings"
-            active={active === 3}
-            onClick={() => setActive(3)}
+            active={pathname.includes("/guide/bookings")}
             label={
               <Text fz={16} fw={400}>
                 Bookings
@@ -86,7 +82,7 @@ export default function GuideNavBar({}) {
             }
             leftSection={
               <ActionIcon
-                c={active === 3 ? "primary-red" : "black"}
+                c={pathname.includes("/guide/bookings") ? "primary-red" : "black"}
                 variant="transparent"
               >
                 <IconCalendarStats stroke={1.5} />
@@ -96,8 +92,7 @@ export default function GuideNavBar({}) {
           <NavLink
             component={Link}
             href="/guide/settings"
-            active={active === 4}
-            onClick={() => setActive(4)}
+            active={pathname.includes("/guide/settings")}
             label={
               <Text fz={16} fw={400}>
                 Account Settings
@@ -105,7 +100,7 @@ export default function GuideNavBar({}) {
             }
             leftSection={
               <ActionIcon
-                c={active === 4 ? "primary-red" : "black"}
+                c={pathname.includes("/guide/settings") ? "primary-red" : "black"}
                 variant="transparent"
               >
                 <IconSettings stroke={1.5} />
