@@ -13,13 +13,12 @@ import {
 import { IconChevronDown } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import FiltersModal from "@/app/components/modals/FiltersModal";
-import NewBookingTable from "@/app/components/tables/NewBookingTable";
-import OngoingBookingTable from "@/app/components/tables/OngoingBookingTable";
-import { booking_table_data } from "@/app/utils/constants";
-import { ongoing_booking_table_header } from "@/app/utils/constants";
-import { ongoing_booking_table_data } from "@/app/utils/constants";
+import { vendorNewBookingTableHeader,vendorNewBookingTableData,vendorOngoingBookingTableHeader,vendorOngoingBookingTableData } from "@/app/utils/constants";
+import VendorNewBookingTable from "@/app/components/tables/VendorNewBookingTable";
+import VendorOngoingBookingTable from "@/app/components/tables/VendorOngoingBookingTable";
 
-export default function BookingTable() {
+
+export default function VendorBookingTable() {
   const [activeTab, setActiveTab] = useState("new");
 
   const [filtersOpened, handleFilters] = useDisclosure(false);
@@ -74,12 +73,18 @@ export default function BookingTable() {
         <Space h="md" />
 
         {/* Conditional rendering based on activeTab */}
-        {activeTab === "new" && <NewBookingTable data={booking_table_data} />}
+        {activeTab === "new" && <VendorNewBookingTable  headers={vendorNewBookingTableHeader}
+            data={vendorNewBookingTableData}
+            bookingType={"new"} />}
         {activeTab === "ongoing" && (
-          <OngoingBookingTable
-            headers={ongoing_booking_table_header}
-            data={ongoing_booking_table_data}
+          <VendorOngoingBookingTable
+            headers={vendorOngoingBookingTableHeader}
+            data={vendorOngoingBookingTableData}
+            tableHeading={""}
             bookingType={"ongoing"}
+           
+
+            
           />
         )}
       </Paper>

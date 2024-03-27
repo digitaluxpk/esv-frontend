@@ -12,16 +12,16 @@ import {
 import { IconCircleCheck } from "@tabler/icons-react";
 import { useToggle } from "@mantine/hooks";
 import Link from "next/link";
-import { useState } from 'react';
+import { useState } from "react";
 export default function CompleteBookingModal({ opened, close }) {
-//   const [type, toggle] = useToggle(["Great", "Congrats"]);
-//   const theme = useMantineTheme();
+  //   const [type, toggle] = useToggle(["Great", "Congrats"]);
+  //   const theme = useMantineTheme();
 
-const [type, setType] = useState('Great');
+  const [type, setType] = useState("Great");
   const theme = useMantineTheme();
 
   const handleClick = () => {
-    setType((prevType) => (prevType === 'Great' ? 'Congrats' : 'Great'));
+    setType((prevType) => (prevType === "Great" ? "Congrats" : "Great"));
   };
 
   return (
@@ -70,7 +70,6 @@ const [type, setType] = useState('Great');
           <Space h="sm" />
 
           <Button
-
             fullWidth
             type="submit"
             // onClick={() => toggle()}

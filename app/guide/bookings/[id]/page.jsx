@@ -34,7 +34,7 @@ export default function Bookings() {
 
   const searchParams = useSearchParams();
   const type = searchParams.get("status");
-
+  console.log("type is ",type)
   const [activityStatus, setActivityStatus] = useState(
     type ? type.toLowerCase() : "pending"
   );
@@ -164,6 +164,7 @@ export default function Bookings() {
           )}
           {(activityStatus === "accepted" || activityStatus === "ongoing") && (
             <Button
+              mr={20}
               leftSection={<IconBell size={16} />}
               variant="default"
               onClick={() => {}}
@@ -187,6 +188,7 @@ export default function Bookings() {
               <>
                 {returnEquipmentClicked && (
                   <Button
+                    mr={20}
                     leftSection={<IconPhone size={16} />}
                     variant="default"
                     onClick={() => {}}

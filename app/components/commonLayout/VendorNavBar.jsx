@@ -12,7 +12,7 @@ import {
   IconMoneybag,
 } from "@tabler/icons-react";
 
-export default function GuideNavBar({}) {
+export default function VendorNavBar({}) {
   const [active, setActive] = useState(0);
 
   return (
@@ -21,7 +21,7 @@ export default function GuideNavBar({}) {
         <Flex direction={"column"} gap={12} p={"md"} my={"md"}>
           <NavLink
             component={Link}
-            href="/guide"
+            href="/vendor"
             active={active === 0}
             onClick={() => setActive(0)}
             label={
@@ -40,7 +40,7 @@ export default function GuideNavBar({}) {
           />
           <NavLink
             component={Link}
-            href="/guide/schedule"
+            href="/vendor/schedule"
             active={active === 1}
             onClick={() => setActive(1)}
             label={
@@ -59,7 +59,7 @@ export default function GuideNavBar({}) {
           />
           <NavLink
             component={Link}
-            href="/guide/invoice"
+            href="/vendor/invoice"
             active={active === 2}
             onClick={() => setActive(2)}
             label={
@@ -78,7 +78,7 @@ export default function GuideNavBar({}) {
           />
           <NavLink
             component={Link}
-            href="/guide/bookings"
+            href="/vendor/bookings"
             active={active === 3}
             onClick={() => setActive(3)}
             label={
@@ -97,7 +97,7 @@ export default function GuideNavBar({}) {
           />
           <NavLink
             component={Link}
-            href="/guide/settings"
+            href="/vendor/settings"
             active={active === 4}
             onClick={() => setActive(4)}
             label={

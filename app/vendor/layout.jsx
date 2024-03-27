@@ -2,12 +2,10 @@
 
 import { AppShell } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import GuideNavBar from "@/app/components/commonLayout/GuideNavBar";
 import VendorNavBar from "@/app/components/commonLayout/VendorNavBar";
-
 import Header from "@/app/components/commonLayout/Header";
 
-export default function GuideLayout({ children }) {
+export default function VendorLayout({ children }) {
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
   return (
@@ -27,8 +25,7 @@ export default function GuideLayout({ children }) {
         toggleMobile={toggleMobile}
       />
 
-      <GuideNavBar />
-      
+      <VendorNavBar />
 
       <AppShell.Main>{children}</AppShell.Main>
     </AppShell>

@@ -13,13 +13,10 @@ import {
 import { IconChevronDown } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import FiltersModal from "@/app/components/modals/FiltersModal";
-import NewBookingTable from "@/app/components/tables/NewBookingTable";
-import OngoingBookingTable from "@/app/components/tables/OngoingBookingTable";
-import { booking_table_data } from "@/app/utils/constants";
-import { ongoing_booking_table_header } from "@/app/utils/constants";
-import { ongoing_booking_table_data } from "@/app/utils/constants";
+import NewBookingTable from "@/app/components/guideDashboardComponents/NewBookingTable";
+import OngoingBookingTable from "@/app/components/guideDashboardComponents/OngoingBookingTable";
 
-export default function BookingTable() {
+export default function Table() {
   const [activeTab, setActiveTab] = useState("new");
 
   const [filtersOpened, handleFilters] = useDisclosure(false);
@@ -74,14 +71,8 @@ export default function BookingTable() {
         <Space h="md" />
 
         {/* Conditional rendering based on activeTab */}
-        {activeTab === "new" && <NewBookingTable data={booking_table_data} />}
-        {activeTab === "ongoing" && (
-          <OngoingBookingTable
-            headers={ongoing_booking_table_header}
-            data={ongoing_booking_table_data}
-            bookingType={"ongoing"}
-          />
-        )}
+        {activeTab === "new" && <NewBookingTable />}
+        {activeTab === "ongoing" && <OngoingBookingTable />}
       </Paper>
     </>
   );
