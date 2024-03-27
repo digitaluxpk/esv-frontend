@@ -1898,6 +1898,38 @@ guides:[],
 ];
 
 
+// vendor invoice 
+
+const vendorEarningSummaryList = [
+  {
+    id: 1,
+    title: "Current Month Earning",
+    count: "CHF 12,596",
+    performance: "profit",
+    performance_count: "1.9%",
+    performance_text: "Compare to the last month",
+  },
+  {
+    id: 2,
+    title: "Current Year Earning",
+    count: "CHF 12,596",
+    performance: "profit",
+    performance_count: "1.9%",
+    performance_text: "Compare to the last month",
+  },
+  {
+    id: 3,
+    title: "Average Month Earning",
+    count: "CHF 12,596",
+    performance: "profit",
+    performance_count: "1.9%",
+    performance_text: "Compare to the last month",
+  },
+];
+
+
+
+
 export {
   gudieBookingStatus,
   booking_report,
@@ -1920,5 +1952,5 @@ export {
   invoiceDetailTableData,
   userLocationsList,
   newBooking,
-  guideNotificationsList,vendorBookingStatus,vendorNewBookingTableHeader,vendorNewBookingTableData,vendorOngoingBookingTableHeader,vendorOngoingBookingTableData
+  guideNotificationsList,vendorBookingStatus,vendorNewBookingTableHeader,vendorNewBookingTableData,vendorOngoingBookingTableHeader,vendorOngoingBookingTableData,vendorEarningSummaryList
 };

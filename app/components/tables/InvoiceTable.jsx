@@ -16,7 +16,7 @@ import { IconPointFilled, IconChevronDown } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import FiltersModal from "@/app/components/modals/FiltersModal";
 import Link from "next/link";
-export default function InvoiceTable({ headers, data, tableHeading }) {
+export default function InvoiceTable({ headers, data, tableHeading ,userType}) {
   const [filtersOpened, handleFilters] = useDisclosure(false);
   const theme = useMantineTheme();
 
@@ -46,7 +46,7 @@ export default function InvoiceTable({ headers, data, tableHeading }) {
       <Table.Td>
         <Link
           href={{
-            pathname: "/guide/invoice/123",
+            pathname: `/${userType}/invoice/123`,
             query: { status: invoice.status },
           }}
         >

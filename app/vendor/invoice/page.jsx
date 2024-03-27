@@ -2,7 +2,7 @@
 
 import { Grid, Space } from "@mantine/core";
 
-import { summaryList } from "@/app/utils/constants";
+import { vendorEarningSummaryList } from "@/app/utils/constants";
 
 import StatusCards from "@/app/components/cards/StatusCards";
 import ReportChart from "@/app/components/charts/ReportChart";
@@ -18,7 +18,7 @@ export default function Invoice() {
   return (
     <div>
       <Grid gutter="lg">
-        {summaryList?.map((summary) => (
+        {vendorEarningSummaryList?.map((summary) => (
           <StatusCards key={summary.id} booking={summary} count={4} />
         ))}
       </Grid>
@@ -35,8 +35,8 @@ export default function Invoice() {
       <InvoiceTable
         headers={invoice_table_header}
         data={invoice_table_data}
-        tableHeading={"Invoice"}
-        userType={"guide"}
+        tableHeading={"Payment"}
+        userType={"vendor"}
       />
     </div>
   );

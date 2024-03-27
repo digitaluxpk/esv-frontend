@@ -23,7 +23,6 @@ export default function Dashboard() {
             graphReport={booking_report}
           />
         </Grid.Col>
-        
       </Grid>
       <Space h="lg" />
       <VendorBookingTable />

@@ -1,28 +1,20 @@
 "use client";
 import { useState } from "react";
 import React from "react";
-import {
-  Paper,
-  Flex,
-  Text,
-  Button,
-  Space,
-  Grid,
-  Badge,
-  useMantineTheme,
-} from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { Text, Button, Space, Grid, Badge } from "@mantine/core";
 import { IconArrowNarrowLeft, IconPointFilled } from "@tabler/icons-react";
+
 import {
   invoiceDetail,
-  invoiceDetailTableHeader,
-  invoiceDetailTableData,
+  vendorOngoingBookingTableHeader,
+  vendorOngoingBookingTableData,
 } from "@/app/utils/constants";
+
 import { useSearchParams } from "next/navigation";
 
 import Link from "next/link";
 import StatusCards from "@/app/components/cards/StatusCards";
-import SpecificInvoiceDetailTable from "@/app/components/tables/SpecificInvoiceDetailTable";
+import VendorOngoingBookingTable from "@/app/components/tables/VendorOngoingBookingTable";
 export default function InvoiceDetail() {
   const searchParams = useSearchParams();
   const type = searchParams.get("status");
@@ -31,11 +23,9 @@ export default function InvoiceDetail() {
     type ? type.toLowerCase() : "Paid"
   );
 
-  const theme = useMantineTheme();
-
   return (
     <div style={{ marginLeft: "1%" }}>
-      <Link href="/guide/invoice">
+      <Link href="/vendor/invoice">
         <Button
           size="md"
           color="dark"
@@ -75,10 +65,11 @@ export default function InvoiceDetail() {
 
       <Space h="md" />
 
-      <SpecificInvoiceDetailTable
-        headers={invoiceDetailTableHeader}
-        data={invoiceDetailTableData}
+      <VendorOngoingBookingTable
+        headers={vendorOngoingBookingTableHeader}
+        data={vendorOngoingBookingTableData}
         tableHeading={"Invoice ID - #12785"}
+        bookingType={""}
       />
     </div>
   );
