@@ -13,15 +13,17 @@ export default function VendorOngoingBookingTable({
 
   const rows = data?.map((booking) => (
     <Table.Tr key={booking.id}>
-      <Table.Td w={"25%"}>{booking.orderId}</Table.Td>
-      <Table.Td w={"25%"}>{booking.date}</Table.Td>
-      <Table.Td w={"25%"}>{booking.customer}</Table.Td>
-      <Table.Td w={"25%"}>{booking.catagory}</Table.Td>
-      <Table.Td w={"25%"}> {booking.prod_name}</Table.Td>
+      <Table.Td  >{booking.orderId}</Table.Td>
+      <Table.Td  >{booking.date}</Table.Td>
+      <Table.Td  >{booking.customer}</Table.Td>
+      <Table.Td  >{booking.catagory}</Table.Td>
+      <Table.Td  > {booking.prod_name}</Table.Td>
      
-      <Table.Td w={"25%"}>
-      {booking.bikeTypes.map((bike) => {
-        <Text
+      <Table.Td  >
+      <Flex  align="center">
+      {booking?.bikeTypes.map((bike) => (
+      
+        <Text mr={8}
           bg="#DCDFEA"
           fz={"xs"}
           px={3}
@@ -34,14 +36,16 @@ export default function VendorOngoingBookingTable({
           }}
         >
           {bike.name}{" "}
-        </Text>;
-      })}
+        </Text>
+       
+     ))}
+      </Flex>
       </Table.Td>
 
-      <Table.Td w={"25%"} ta={"center"}>{booking.bikes}</Table.Td>
-      <Table.Td w={"25%"}>
+      <Table.Td   >{booking.bikes}</Table.Td>
+      <Table.Td  >
         {" "}
-        <Flex justify={"center"} align="center">
+        <Flex justify={"flex-start"} align="center">
           <Text
             bg="#DCDFEA"
             fz={"sm"}
@@ -58,13 +62,13 @@ export default function VendorOngoingBookingTable({
           </Text>
         </Flex>
       </Table.Td>
-      <Table.Td> {booking.protections}</Table.Td>
+      <Table.Td ta="center"> {booking.protections}</Table.Td>
       <Table.Td>
         <BookingGuides data={booking.guides} />
       </Table.Td>
       <Table.Td> {booking.amount}</Table.Td>
 
-      <Table.Td w={"25%"}>
+      <Table.Td  >
         <Badge
           size="md"
           tt="capitalize"
@@ -93,7 +97,7 @@ export default function VendorOngoingBookingTable({
       <Table.Td>
         <Link
           href={{
-            pathname: "/guide/bookings/123",
+            pathname: "/vendor/bookings/123",
             query: { status: booking.fulfilment_status },
           }}
         >
@@ -128,7 +132,7 @@ export default function VendorOngoingBookingTable({
         <Table.Thead bg="#eff1f5">
           <Table.Tr>
             {headers?.map((col) => (
-              <Table.Th key={col.id}>{col.name}</Table.Th>
+              <Table.Th miw={"160px"} key={col.id}>{col.name}</Table.Th>
             ))}
           </Table.Tr>
         </Table.Thead>

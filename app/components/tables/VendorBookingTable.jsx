@@ -80,7 +80,9 @@ export default function VendorBookingTable() {
           <VendorOngoingBookingTable
             headers={vendorOngoingBookingTableHeader}
             data={vendorOngoingBookingTableData}
+            tableHeading={""}
             bookingType={"ongoing"}
+           
 
             
           />

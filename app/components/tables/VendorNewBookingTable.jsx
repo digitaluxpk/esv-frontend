@@ -4,12 +4,8 @@ import { Menu, Button, Table,Group,Text,Flex } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import BookingGuides from "../avatar/BookingGuides";
 import Link from "next/link";
-import AcceptBookingModal from "@/app/components/modals/AcceptBookingModal";
-import CancelBookingModal from "@/app/components/modals/CancelBookingModal";
 export default function VendorNewBookingTable({headers, data,bookingType }) {
   const [selectedBooking, setSelectedBooking] = useState(null);
-  const [acceptModalOpened, handleAcceptModal] = useDisclosure(false);
-  const [cancelModalOpened, handleCancelModal] = useDisclosure(false);
 
   const rows = data?.map((booking) => (
     <Table.Tr key={booking.id}>
@@ -60,13 +56,25 @@ export default function VendorNewBookingTable({headers, data,bookingType }) {
           </Menu.Target>
 
           <Menu.Dropdown>
-            <Menu.Item onClick={() => handleAcceptModal.open()}>
+            <Menu.Item  component={Link}  href={{
+                pathname: "/vendor/bookings/123",
+                query: { status: "pending" },
+              }}>
               Accept Booking
             </Menu.Item>
-            <Menu.Item onClick={() => handleCancelModal.open()}>
+            {/* <Menu.Item       href={{
+                pathname: "/vendor/bookings/123",
+                query: { status: "cancel" },
+              }}>
               Cancel Booking
+            </Menu.Item> */}
+
+             <Menu.Item onClick={() => handleCancelModal.open()}>
+              Reject Booking
             </Menu.Item>
-            <Menu.Item component={Link} href="/guide/bookings/123">
+
+
+            <Menu.Item component={Link} href="/vendor/bookings/123">
               Booking details
             </Menu.Item>
           </Menu.Dropdown>
@@ -97,17 +105,9 @@ export default function VendorNewBookingTable({headers, data,bookingType }) {
         <Table.Tbody>{rows}</Table.Tbody>
       </Table>
 
-      <AcceptBookingModal
-        opened={acceptModalOpened}
-        close={() => handleAcceptModal.close()}
-        booking={selectedBooking}
-      />
+      
 
-      <CancelBookingModal
-        opened={cancelModalOpened}
-        close={() => handleCancelModal.close()}
-        booking={selectedBooking}
-      />
+     
     </>
   );
 }

@@ -5,7 +5,7 @@ import { IconChevronDown } from "@tabler/icons-react";
 import { useForm } from "@mantine/form";
 import { IconInfoCircle } from "@tabler/icons-react";
 import Link from "next/link";
-export default function CancelBookingModal({ opened, close, booking }) {
+export default function CancelBookingModal({ opened, close, booking,userType }) {
   const form = useForm({
     initialValues: {
       reason: "unavailable",
@@ -43,7 +43,7 @@ export default function CancelBookingModal({ opened, close, booking }) {
             <IconInfoCircle size={40} stroke={2} color="#FF1616" />
 
             <Text fw={700} fz={20} ta={"center"}>
-              Request to Cancel Booking!
+               Cancel Booking!
             </Text>
 
             <Flex justify={"center"} align="flex-start">
@@ -94,13 +94,38 @@ export default function CancelBookingModal({ opened, close, booking }) {
               >
                 Cancel
               </Button>
-              <Button
+
+              <Link 
+              
+              // href={{
+              //     pathname: "/${userType}/bookings/123",
+              //     query: { status: "canceled" },
+              //   }}
+              
+              href={`/${userType}/bookings/123?status=canceled`}
+               component={Button}>
+
+    <Button  fw={500}
+                fz={"md"}
+                radius={0}
+                variant="filled"  mr={20}>
+      Reject Booking
+    </Button>
+
+</Link>
+
+
+
+
+
+
+              {/* <Button
                 component={Link}
                 href={{
-                  pathname: "/guide/bookings/123",
+                  pathname: "/${userType}/bookings/123",
                   query: { status: "canceled" },
                 }}
-                type="submit"
+                // type="submit"
                 w={"49%"}
                 fw={500}
                 fz={"md"}
@@ -108,7 +133,7 @@ export default function CancelBookingModal({ opened, close, booking }) {
                 variant="filled"
               >
                 Submit
-              </Button>
+              </Button> */}
             </Flex>
           </Flex>
         </Center>

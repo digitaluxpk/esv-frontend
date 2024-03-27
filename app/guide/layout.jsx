@@ -27,8 +27,8 @@ export default function GuideLayout({ children }) {
         toggleMobile={toggleMobile}
       />
 
-      {/* <GuideNavBar /> */}
-      <VendorNavBar />
+      <GuideNavBar />
+      
 
       <AppShell.Main>{children}</AppShell.Main>
     </AppShell>

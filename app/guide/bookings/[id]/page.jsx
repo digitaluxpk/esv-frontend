@@ -34,7 +34,7 @@ export default function Bookings() {
 
   const searchParams = useSearchParams();
   const type = searchParams.get("status");
-
+  console.log("type is ",type)
   const [activityStatus, setActivityStatus] = useState(
     type ? type.toLowerCase() : "pending"
   );

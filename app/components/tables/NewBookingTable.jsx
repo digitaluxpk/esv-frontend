@@ -74,7 +74,7 @@ export default function NewBookingTable({ data }) {
       >
         <Table.Thead bg="#eff1f5">
           <Table.Tr>
-            <Table.Th>Booking ID</Table.Th>
+            <Table.Th  >Booking ID</Table.Th>
             <Table.Th>Product Name</Table.Th>
             <Table.Th>Fulfilment Date(s)</Table.Th>
             <Table.Th>Location</Table.Th>
@@ -96,6 +96,7 @@ export default function NewBookingTable({ data }) {
         opened={cancelModalOpened}
         close={() => handleCancelModal.close()}
         booking={selectedBooking}
+        userType={"guide"}
       />
     </>
   );
